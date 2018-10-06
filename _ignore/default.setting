@@ -1,0 +1,6 @@
+{
+'pause':false,
+'app':['com.android.mms','com.tencent.mobileqq','com.tencent.mm'],
+'voice':[false,0],
+'voice_disable':[]
+}

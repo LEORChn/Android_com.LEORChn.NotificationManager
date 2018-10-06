@@ -1,0 +1,30 @@
+<resources>
+	<string name="app_name">Noti-Manager by LEORChn</string>
+	<string name="app_name_main">Noti-Manager</string>
+    
+    
+	<style name="mainChecker">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textAppearance">?android:attr/textAppearanceSmallPopupMenu</item>
+	</style>
+	<style name="viewBtn">
+		<item name="android:scaleType">fitCenter</item>
+		<item name="android:background">@drawable/viewbutton</item>
+	</style>
+	<style name="actionBartton" parent="@style/viewBtn">
+		<item name="android:layout_width">56dp</item>
+		<item name="android:layout_height">fill_parent</item>
+		<item name="android:padding">15dp</item>
+	</style>
+	<style name="standBtn" parent="@style/viewBtn">
+		<item name="android:layout_width">46dp</item>
+		<item name="android:layout_height">46dp</item>
+		<item name="android:padding">10dp</item>
+	</style>
+	<style name="divider">
+		<item name="android:background">?android:attr/dividerVertical</item>
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">1dp</item>
+	</style>
+</resources>

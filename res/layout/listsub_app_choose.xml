@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:id="@+id/listsub_root_app_choose"
+	android:orientation="horizontal"
+	android:gravity="center_vertical">
+
+	<CheckBox
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_margin="6dp"
+		android:clickable="false"
+		android:focusable="false"
+		desc0="此处同时使用 click-false 和 focus-false 是因为"
+		desc1="focus-false 可以使整个 item view 响应触摸操作"
+		desc2="click-false 可以在点击 item 根部 view 时，也能联动到本 checkbox 点击时的视觉效果"
+		android:id="@+id/listsub_check0"/>
+
+	<ImageView
+		android:layout_height="36dp"
+		android:layout_width="36dp"
+		android:layout_margin="6dp"
+		android:id="@+id/listsub_image"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="wrap_content"
+			android:id="@+id/listsub_title"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:id="@+id/listsub_desc"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

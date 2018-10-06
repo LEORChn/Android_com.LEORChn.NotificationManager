@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical">
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="语音引擎"/>
+
+	<View
+		style="@style/divider"/>
+
+	<LinearLayout
+		android:layout_height="36dp"
+		android:layout_width="match_parent"
+		android:orientation="horizontal">
+
+		<Spinner
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:entries="@array/voiceEngine"
+			android:layout_weight="1.0"
+			android:id="@+id/voice_set_engine"/>
+
+		<Spinner
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_weight="1.0"
+			android:visibility="gone"
+			android:id="@+id/voice_set_engine_extra"/>
+
+	</LinearLayout>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_marginTop="10dp"
+		android:text="音频输出选项"/>
+
+	<View
+		style="@style/divider"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="horizontal">
+
+		<CheckBox
+			android:enabled="false"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="强制扬声器播报 (以后版本)"
+			style="@style/mainChecker"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			style="?android:attr/buttonStyleSmall"
+			android:text="？"
+			android:layout_marginLeft="10dp"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="horizontal">
+
+		<CheckBox
+			android:enabled="false"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="仅插入耳机时播报 (以后版本)"
+			style="@style/mainChecker"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			style="?android:attr/buttonStyleSmall"
+			android:text="？"
+			android:layout_marginLeft="10dp"/>
+
+	</LinearLayout>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_marginTop="10dp"
+		android:text="启用语音播报的应用"/>
+
+	<View
+		style="@style/divider"/>
+
+</LinearLayout>
+

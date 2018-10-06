@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:padding="15dp">
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="悬浮窗测试"/>
+
+	<View
+		android:background="?android:attr/dividerVertical"
+		android:layout_height="1dp"
+		android:layout_width="match_parent"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="vertical"
+		android:padding="10dp">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="wrap_content"
+			android:text="要使用相关功能，需要开启悬浮窗。"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="wrap_content"
+			android:text="请点击下方 “测试悬浮窗” 尝试弹出悬浮窗，然后点击悬浮窗中的 “完成测试” 以继续使用相关功能。"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="vertical"
+		android:layout_weight="1.0"
+		android:gravity="bottom">
+
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="#000000"
+			android:layout_margin="20dp"
+			android:id="@+id/fWindowTest_samplemain"
+			android:visibility="gone">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="悬浮窗"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:textColor="#33B5E5"
+				android:layout_margin="10dp"/>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="3dp"
+				android:background="#33B5E5"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="正在测试悬浮窗。请点击“完成测试”。"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_margin="10dp"/>
+
+			<View
+				android:background="?android:attr/dividerVertical"
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:layout_marginTop="10dp"/>
+
+			<Button
+				android:layout_width="match_parent"
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:text="完成测试"
+				android:id="@+id/fWindowTest_samplecheck"/>
+
+		</LinearLayout>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:text="测试悬浮窗"
+			android:id="@+id/fWindowTest_startTest"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:text="我遇到问题，求帮助"
+			android:id="@+id/fWindowTest_help"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

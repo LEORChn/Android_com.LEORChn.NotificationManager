@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="voiceEngine">
+		<item>谷歌 Google</item>
+		<item>百度 Baidu</item>
+		<item>讯飞 iFly (大概以后支持)</item>
+	</string-array>
+</resources>

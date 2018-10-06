@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="vertical"
+		android:padding="10dp"
+		android:minWidth="500dp">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="第一步：授权"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="wrap_content"/>
+
+		<View
+			style="@style/divider"/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:orientation="horizontal">
+
+			<CheckBox
+				style="@style/mainChecker"
+				android:text="读取通知"
+				android:textColor="#FF8000"
+				android:id="@+id/main_perm_read"/>
+
+			<CheckBox
+				style="@style/mainChecker"
+				android:text="显示悬浮窗"
+				android:id="@+id/main_perm_window"/>
+
+			<CheckBox
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="暂停使用"
+				style="@style/mainChecker"
+				android:id="@+id/main_extra_pause"/>
+
+		</LinearLayout>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="第二步：选择所监视的程序"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="wrap_content"
+			android:layout_marginTop="10dp"/>
+
+		<View
+			style="@style/divider"/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:orientation="horizontal">
+
+			<CheckBox
+				style="@style/mainChecker"
+				android:text="短信"
+				android:id="@+id/main_app_sms"/>
+
+			<CheckBox
+				style="@style/mainChecker"
+				android:text="微信"
+				android:id="@+id/main_app_wechat"/>
+
+			<CheckBox
+				style="@style/mainChecker"
+				android:text="QQ"
+				android:id="@+id/main_app_qq"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				style="?android:attr/buttonStyleSmall"
+				android:text="额外..."
+				android:layout_width="wrap_content"
+				android:id="@+id/main_app_sets"/>
+
+		</LinearLayout>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="第三步：高级自定义"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="wrap_content"
+			android:layout_marginTop="10dp"/>
+
+		<View
+			style="@style/divider"/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:orientation="horizontal">
+
+			<CheckBox
+				style="@style/mainChecker"
+				android:text="锁屏时语音播报"
+				android:id="@+id/main_extra_voice"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				style="?android:attr/buttonStyleSmall"
+				android:text="设置..."
+				android:layout_width="wrap_content"
+				android:id="@+id/main_extra_voice_sets"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:orientation="horizontal">
+
+			<CheckBox
+				android:enabled="false"
+				style="@style/mainChecker"
+				android:text="屏蔽悬浮式通知 (以后版本)"
+				android:id="@+id/main_extra_block_float"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				style="?android:attr/buttonStyleSmall"
+				android:text="设置..."
+				android:layout_width="wrap_content"
+				android:id="@+id/main_extra_block_sets"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:orientation="horizontal">
+
+			<Button
+				android:enabled="false"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				style="?android:attr/buttonStyleSmall"
+				android:text="例外情况..."
+				android:id="@+id/main_extra_exception"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="←(以后版本)→"
+				android:layout_width="wrap_content"/>
+
+			<Button
+				android:enabled="false"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				style="?android:attr/buttonStyleSmall"
+				android:text="额外选项..."
+				android:id="@+id/main_extra_sets"/>
+
+		</LinearLayout>
+
+		<View
+			style="@style/divider"/>
+
+		<Button
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="保存设置"
+			android:id="@+id/main_save"
+			android:layout_weight="1.0"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="以上设置会立即生效。可以不点击保存，但会在本程序重启后被重置。"/>
+
+	</LinearLayout>
+
+</ScrollView>
+
