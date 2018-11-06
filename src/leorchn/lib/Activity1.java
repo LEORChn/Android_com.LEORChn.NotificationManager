@@ -225,11 +225,11 @@ class Toast1 implements Runnable{ // 这个是为了解决在高版本系统连�
 			s.length()>9?
 				Toast.LENGTH_LONG:
 				Toast.LENGTH_SHORT)
-		;//.show();
+		.show();
 	}
 	static Toast mul=Toast.makeText(App.getContext(),"",Toast.LENGTH_LONG);
 	public static void multip(String s){
 		mul.setText(s);
-		//mul.show();
+		mul.show();
 	}
 }
