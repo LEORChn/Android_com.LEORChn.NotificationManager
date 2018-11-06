@@ -87,11 +87,27 @@
 
 		</LinearLayout>
 
-		<Button
+		<LinearLayout
 			android:layout_height="wrap_content"
 			android:layout_width="match_parent"
-			android:text="测试悬浮窗"
-			android:id="@+id/fWindowTest_startTest"/>
+			android:orientation="horizontal">
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="测试悬浮窗"
+				android:id="@+id/fWindowTest_startTest"
+				android:layout_weight="1.0"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				style="?android:attr/buttonStyleSmall"
+				android:text="取消授权？"
+				android:layout_width="wrap_content"
+				android:id="@+id/fWindowTest_remove"
+				android:visibility="gone"/>
+
+		</LinearLayout>
 
 		<Button
 			android:layout_height="wrap_content"

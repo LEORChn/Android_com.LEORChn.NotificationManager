@@ -176,6 +176,115 @@
 			android:layout_height="wrap_content"
 			android:text="以上设置会立即生效。可以不点击保存，但会在本程序重启后被重置。"/>
 
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="关于软件"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="wrap_content"
+			android:layout_marginTop="10dp"/>
+
+		<View
+			android:layout_height="1dp"
+			android:background="?android:attr/dividerVertical"
+			android:layout_width="match_parent"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="作者：疯狂小瑞瑞"
+			android:layout_width="wrap_content"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="Copyright 2014-2018 LEORChn Soft."
+			android:layout_width="wrap_content"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="仅仅只是因为GO屏幕通知，只因它在我的新手机上运行总是读出乱码，而且也已经不再更新，因此开发了这样的软件。希望也能帮到你。"
+			android:layout_width="wrap_content"/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:gravity="center_vertical">
+
+			<Button
+				android:layout_height="wrap_content"
+				style="?android:attr/buttonStyleSmall"
+				android:text="捐款帮助开发（建议3元）"
+				android:layout_width="wrap_content"
+				android:id="@+id/main_donate"/>
+
+			<viewproxy.AutoScrollTextView
+				android:id="@+id/main_donate_list"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:text="Loading..."
+				android:textColor="#00ff00"/>
+
+		</LinearLayout>
+
+		<Button
+			android:layout_height="wrap_content"
+			style="?android:attr/buttonStyleSmall"
+			android:text="反馈建议和问题（通过QQ）"
+			android:layout_width="wrap_content"
+			android:id="@+id/main_report"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="开发人员选项"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="wrap_content"
+			android:layout_marginTop="10dp"/>
+
+		<View
+			style="@style/divider"/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:orientation="horizontal">
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				style="?android:attr/buttonStyleSmall"
+				android:text="启动内存监测界面"
+				android:id="@+id/main_launch_monitor"/>
+
+			<CheckBox
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="调试模式"
+				android:id="@+id/main_debug_mode"/>
+
+		</LinearLayout>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			style="?android:attr/buttonStyleSmall"
+			android:text="查看运行日志"
+			android:id="@+id/main_launch_log"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			style="?android:attr/buttonStyleSmall"
+			android:text="获取开发级控制台资格"
+			android:layout_width="wrap_content"
+			android:id="@+id/main_get_entry"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			style="?android:attr/buttonStyleSmall"
+			android:text="脚本控制台界面"
+			android:id="@+id/main_launch_console"
+			android:visibility="gone"/>
+
 	</LinearLayout>
 
 </ScrollView>

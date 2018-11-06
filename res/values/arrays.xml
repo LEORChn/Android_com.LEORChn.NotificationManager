@@ -5,4 +5,8 @@
 		<item>百度 Baidu</item>
 		<item>讯飞 iFly (大概以后支持)</item>
 	</string-array>
+	<string-array name="voiceStatDefault">
+		<item>默认全部启用</item>
+		<item>默认全部禁用</item>
+	</string-array>
 </resources>

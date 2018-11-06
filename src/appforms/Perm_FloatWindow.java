@@ -29,11 +29,13 @@ public class Perm_FloatWindow extends Activity1{
 	@Override protected boolean onIdle(){
         setContentView(layout.activity_floatwindowtest);
 		btnbind(id.fWindowTest_startTest,
+				id.fWindowTest_remove,
 				id.fWindowTest_help,
 				id.fWindowTest_samplecheck);
 		sample=fv(id.fWindowTest_samplemain);
 		((ViewGroup)sample.getParent()).removeView(sample);
 		sample.setVisibility(View.VISIBLE);
+		if(isPermissionGranted()) fv(id.fWindowTest_remove).setVisibility(View.VISIBLE);
 		return false;
 	}
 	View sample;
@@ -41,6 +43,9 @@ public class Perm_FloatWindow extends Activity1{
 		switch(v.getId()){
 			case id.fWindowTest_startTest:
 				showFloatWindow(sample);
+				break;
+			case id.fWindowTest_remove:
+				new Msgbox("取消悬浮窗授权","如要取消授权，一般是点击下方的帮助选项，然后执行反向行为即可。","ok");
 				break;
 			case id.fWindowTest_help:
 				new Msgbox("如何开启悬浮窗","一般就是在系统设置或者手机自带的管家软件里调整设置。还不会的可以帮你百度一下。","百度一下","确定","系统设置"){

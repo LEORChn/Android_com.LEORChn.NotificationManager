@@ -18,19 +18,42 @@
 		android:layout_width="match_parent"
 		android:orientation="horizontal">
 
-		<Spinner
+		<viewproxy.Spinner
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
 			android:entries="@array/voiceEngine"
 			android:layout_weight="1.0"
 			android:id="@+id/voice_set_engine"/>
 
-		<Spinner
+		<viewproxy.Spinner
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
 			android:layout_weight="1.0"
 			android:visibility="gone"
 			android:id="@+id/voice_set_engine_extra"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal">
+
+		<EditText
+			android:layout_height="match_parent"
+			android:ems="10"
+			android:layout_width="wrap_content"
+			android:singleLine="true"
+			android:layout_weight="1.0"
+			android:hint="我是语音播报员，您有一条新通知"
+			android:id="@+id/voice_set_engine_test_input"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			style="?android:attr/buttonStyleSmall"
+			android:text="测试"
+			android:layout_width="wrap_content"
+			android:id="@+id/voice_set_engine_test"/>
 
 	</LinearLayout>
 
@@ -60,7 +83,8 @@
 			android:layout_width="wrap_content"
 			style="?android:attr/buttonStyleSmall"
 			android:text="？"
-			android:layout_marginLeft="10dp"/>
+			android:layout_marginLeft="10dp"
+			android:id="@+id/voice_set_force_speaker_help"/>
 
 	</LinearLayout>
 
@@ -81,7 +105,37 @@
 			android:layout_width="wrap_content"
 			style="?android:attr/buttonStyleSmall"
 			android:text="？"
-			android:layout_marginLeft="10dp"/>
+			android:layout_marginLeft="10dp"
+			android:id="@+id/voice_set_earphone_only_help"/>
+
+	</LinearLayout>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_marginTop="10dp"
+		android:text="语音播报的默认规则"/>
+
+	<View
+		style="@style/divider"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="horizontal">
+
+		<viewproxy.Spinner
+			android:layout_height="match_parent"
+			android:layout_width="wrap_content"
+			android:entries="@array/voiceStatDefault"
+			android:id="@+id/voice_set_stat_default"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			style="?android:attr/buttonStyleSmall"
+			android:text="图示"
+			android:layout_width="wrap_content"
+			android:id="@+id/voice_set_stat_help"/>
 
 	</LinearLayout>
 

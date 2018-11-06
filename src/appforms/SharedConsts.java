@@ -3,10 +3,11 @@ import java.util.*;
 
 public interface SharedConsts{
 	public static ArrayList<String> LISTENING_APPS=new ArrayList<>(),
+		ENABLED_VOICE_APPS=new ArrayList<>(),
 		DISABLED_VOICE_APPS=new ArrayList<>();
 	public static PkgName PKG;
 	public static ListManager list;
-	public static Object[]dataRaw=new Object[]{false,false,false,0};
+	public static Object[]dataRaw=new Object[]{false,false,false,0,true};
 	public static DataManager data;
 	public static DataType TYPE;
 }
@@ -26,14 +27,16 @@ enum DataType{
 	LOADED_DATA_FROM_FILE,
 	PAUSE,
 	VOICE_ON_SCREEN_OFF,
-	VOICE_API_CHOICE // 0谷歌娘 1度娘
-} 
+	VOICE_API_CHOICE, // 0谷歌娘 1度娘
+	VOICE_STAT_DEFAULT
+}
 class DataManager implements SharedConsts{
 	static DataType[] dt={
 		TYPE.LOADED_DATA_FROM_FILE,
 		TYPE.PAUSE,
 		TYPE.VOICE_ON_SCREEN_OFF,
-		TYPE.VOICE_API_CHOICE
+		TYPE.VOICE_API_CHOICE,
+		TYPE.VOICE_STAT_DEFAULT
 	};
 	public static Object get(DataType d){
 		for(int i=0;i<dt.length;i++)

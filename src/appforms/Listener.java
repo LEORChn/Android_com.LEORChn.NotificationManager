@@ -1,11 +1,13 @@
 package appforms;
-import leorchn.lib.*;
-import static leorchn.lib.Activity1.*;
-import android.service.notification.*;
 import android.app.*;
-import android.os.*;
-import android.content.pm.*;
 import android.content.*;
+import android.content.pm.*;
+import android.os.*;
+import android.service.notification.*;
+import android.view.*;
+import leorchn.lib.*;
+
+import static leorchn.lib.Activity1.*;
 
 public class Listener extends NotificationListenerService implements Consts, SharedConsts{
 	@Override public void onCreate() {
@@ -28,15 +30,19 @@ public class Listener extends NotificationListenerService implements Consts, Sha
 	@Override public void onNotificationPosted(StatusBarNotification sbn){
 		if((boolean)data.get(TYPE.PAUSE)) return; // 全局暂停使用
 		String pkg=sbn.getPackageName();
-		PowerManager pow=(PowerManager)getSystemService(POWER_SERVICE);
+		//PowerManager pow=(PowerManager)getSystemService(POWER_SERVICE);
 		if(!LISTENING_APPS.contains(pkg)) return; // 发送新通知的包名不在监听范围内
-		do{
+		
+		do{ // 语音功能块
 			if(!(boolean)data.get(TYPE.VOICE_ON_SCREEN_OFF)) break; // 未开启锁屏播报，退出
-			if(!DEBUG && pow.isScreenOn()) break; // 检测未锁屏，退出。（测试阶段暂不开启）
-			if(DISABLED_VOICE_APPS.contains(pkg)) break; // 包名是排除播报的成员之一，退出
-			
+			if(!DEBUG) if(isScreenOn()) break; // 如果在非调试模式，检测到未锁屏则不播报
+			if((boolean)data.get(TYPE.VOICE_STAT_DEFAULT)){ // 检测语音功能对所有包的默认状态
+				if(DISABLED_VOICE_APPS.contains(pkg)) break; // 虽然默认开启，但是是强制禁用播报的成员，退出
+			}else if(!ENABLED_VOICE_APPS.contains(pkg)) break; // 默认关闭，而且不是强制启用播报的成员，退出
+			NotificationScript.exec(sbn);
 		}while(false);
 		
+		if(!DEBUG) return;
 		FSON j=new FSON("{}");
 		Notification n=sbn.getNotification();
 		j.set("ticker",n.tickerText);
@@ -114,4 +120,24 @@ public class Listener extends NotificationListenerService implements Consts, Sha
 			//tip("服务断开连接");
 		}
 	};
+	boolean isScreenOn(){
+		if(Sys.apiLevel() >= 20){
+			WindowManager wm=(WindowManager) getSystemService(WINDOW_SERVICE);
+			Display d = wm.getDefaultDisplay();
+			switch(d.getState()){
+				case Display.STATE_OFF: // 1 api 20
+				case Display.STATE_DOZE: // 3 api 21
+				case Display.STATE_DOZE_SUSPEND: // 4 api 21
+				case 6: // STATE_ON_SUSPEND api 28
+					return false;
+				case Display.STATE_ON: // 2 api 20
+					return true;
+				default:
+					return false;
+			}
+		}else{
+			PowerManager pow=(PowerManager)getSystemService(POWER_SERVICE);
+			return pow.isScreenOn();
+		}
+	}
 }

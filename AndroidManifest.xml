@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.LEORChn.NotificationManager"
-	android:versionCode="100000"
-	android:versionName="1.0">
+	android:versionCode="9008"
+	android:versionName="0.9.8">
 	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="19" /><!--8=2.2;19=4.4-->
 	<uses-permission android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<application
 		android:name="leorchn.App"
 		android:allowBackup="true"
@@ -23,6 +24,8 @@
 		</activity>
 		<activity android:name="appforms.SettingAppChoose" android:configChanges="orientation|screenSize"/>
 		<activity android:name="appforms.SettingVoice" android:configChanges="orientation|screenSize"/>
+		<activity android:name="appforms.Logcat" android:configChanges="orientation|screenSize"/>
+		<activity android:name="appforms.ScriptConsole" android:configChanges="orientation|screenSize"/>
 		<activity android:name="appforms.Perm_FloatWindow" android:configChanges="orientation|screenSize"/>
 		<!--activity android:name="appforms." android:configChanges="orientation|screenSize"/-->
 		<service android:name="appforms.Listener"
@@ -31,5 +34,6 @@
 				<action android:name="android.service.notification.NotificationListenerService"/>
 			</intent-filter>
 		</service>
+		<service android:name="appforms.MemMonitor" />
 	</application>
 </manifest>

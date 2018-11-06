@@ -12,8 +12,11 @@ public class App extends Application implements Consts{
 	}
 	public void onCreate(){
 		super.onCreate();
-		pl("==== Application loaded");
-		if(DEBUG) tip(string("当前正在调试模式运行\n",getApplicationInfo().loadLabel(getPackageManager())));
+		pl("----Application loaded");
+		if(DEBUG){
+			tip(string("当前正在调试模式运行\n",getApplicationInfo().loadLabel(getPackageManager())));
+			startService(new Intent(this,appforms.MemMonitor.class));
+		}
 	}
 	static Context c, getContext; //支持多种写法
 	public static Context getContext(){return c;}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:padding="10dp">
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal">
+
+		<EditText
+			android:layout_height="wrap_content"
+			android:ems="10"
+			android:layout_width="wrap_content"
+			android:layout_weight="1.0"
+			android:id="@+id/script_console_filename"
+			android:hint="PkgName [.lua]"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			style="?android:attr/buttonStyleSmall"
+			android:text="L"
+			android:layout_width="wrap_content"
+			android:id="@+id/script_console_load"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			style="?android:attr/buttonStyleSmall"
+			android:text="S"
+			android:layout_width="wrap_content"
+			android:id="@+id/script_console_save"/>
+
+	</LinearLayout>
+
+	<View
+		android:layout_height="1dp"
+		android:background="?android:attr/dividerVertical"
+		android:layout_width="match_parent"/>
+
+	<LinearLayout
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:orientation="horizontal">
+
+		<View
+			android:layout_height="match_parent"
+			android:background="?android:attr/dividerHorizontal"
+			android:layout_width="1dp"/>
+
+		<EditText
+			android:layout_height="match_parent"
+			android:inputType="textMultiLine"
+			android:ems="10"
+			android:layout_width="wrap_content"
+			android:layout_weight="1.0"
+			android:id="@+id/script_console_content"
+			android:gravity="top"
+			android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+		<View
+			android:layout_height="match_parent"
+			android:background="?android:attr/dividerHorizontal"
+			android:layout_width="1dp"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

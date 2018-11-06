@@ -71,12 +71,13 @@ public class SettingAppChoose extends Activity1 implements AdapterView.OnItemCli
 		boolean checked;
 	}
 	class ListControl extends BaseAdapter{
-		//public CharSequence[]getAutofillOptions(){return null;}
 		ArrayList<Bean>a=new ArrayList<>();
+		ArrayList<Holder>uih=new ArrayList<>();
 		public void add(Bean b){ a.add(b); }
 		public void clear(){ a.clear(); refresh(); }
 		public void refresh(){ notifyDataSetChanged(); }
 		public Bean get(int p){ return a.get(p); }
+		public Holder[] getUiHolders(){ return uih.toArray(new Holder[0]);}
 		@Override public int getCount(){ return a.size(); }
 		@Override public Object getItem(int p){ return null; }
 		@Override public long getItemId(int p){ return 0; }
@@ -87,6 +88,7 @@ public class SettingAppChoose extends Activity1 implements AdapterView.OnItemCli
 				v= inflateView(Bean.LAYOUT);
 				ViewGroup w= (ViewGroup)v;
 				d= new Holder();
+				uih.add(d);
 				d.title= fv(w, id.listsub_title);
 				d.desc= fv(w, id.listsub_desc);
 				d.c= (CheckBox)fv(w, id.listsub_check0);
@@ -116,5 +118,14 @@ public class SettingAppChoose extends Activity1 implements AdapterView.OnItemCli
 		switch(v.getId()){
 			//case id.
 		}
+	}
+	@Override protected void onDestroy(){
+		super.onDestroy();
+		Holder[]uihs=lc.getUiHolders(); // 回收bitmap
+		for(Holder h:uihs)
+			Life.end(h.image);
+		l=null;
+		lc=null;
+		System.gc();
 	}
 }

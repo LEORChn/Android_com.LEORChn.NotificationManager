@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<CheckBox
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="仅限横屏时屏蔽悬浮通知，竖屏时不计入"
+		style="@style/mainChecker"/>
+
+	<CheckBox
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="仅限全屏时屏蔽悬浮通知，显示通知栏时不计入"
+		style="@style/mainChecker"/>
+
+	<CheckBox
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="在右侧以小窗显示通知内容"
+		style="@style/mainChecker"/>
+
+	<CheckBox
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="仅限悬浮通知被屏蔽时，或者通知无悬浮模式时显示小窗"
+		style="@style/mainChecker"/>
+
+	<CheckBox
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="横屏时以经典的Ticker模式代替小窗显示"
+		style="@style/mainChecker"/>
+
+</LinearLayout>
+
